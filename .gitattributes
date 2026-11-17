@@ -1,0 +1,4 @@
+# Normalise text files; keep shell scripts LF so they run in bash/WSL/CloudShell
+# regardless of core.autocrlf.
+* text=auto
+*.sh text eol=lf
