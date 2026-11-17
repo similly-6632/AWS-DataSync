@@ -1,0 +1,19 @@
+# Copy to terraform.tfvars and fill in.
+
+region                  = "eu-west-2"
+name_prefix             = "datasync-s3-xacct"
+source_bucket_name      = "my-org-datasync-source-bucket"
+destination_bucket_name = "third-party-destination-bucket"
+destination_account_id  = "111122223333"
+
+# Only if the third party's bucket uses SSE-KMS:
+# destination_kms_key_arn = "arn:aws:kms:eu-west-2:111122223333:key/00000000-0000-0000-0000-000000000000"
+
+# Only if create-location-s3 for the destination fails with AccessDenied:
+# location_creator_permission_set_name = "AdministratorAccess"
+
+log_retention_days = 30
+
+tags = {
+  Project = "datasync-s3-cross-account"
+}
